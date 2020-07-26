@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>FoxxTTStore</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<!-- <script src="js/datastore.js"></script> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="css/style.min.css" rel="stylesheet">
+
+	<style type="text/css">
+		html,
+		body,
+		header,
+		.carousel {
+			height: 60vh;
+		}
+
+		@media (max-width: 740px) {
+
+			html,
+			body,
+			header,
+			.carousel {
+				height: 100vh;
+			}
+		}
+
+		@media (min-width: 800px) and (max-width: 850px) {
+
+			html,
+			body,
+			header,
+			.carousel {
+				height: 100vh;
+			}
+		}
+
+		.spa {
+			color: red;
+		}
+
+		.wrap-login100 {
+			width: 500px;
+			background: #fff;
+			border-radius: 5px;
+			overflow: hidden;
+			box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+			-webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+			-o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+			-ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+		}
+
+		.center {
+			width: 50%;
+			height: 50%;
+			margin: auto;
+		}
+	</style>
+</head>
+
+<body ng-app="myApp" >
+
+
+
+
+
+
+
+
+
+	<!--Main layout-->
+	<main class="mt-5 pt-4">
+		<div class="container wow fadeIn">
+
+
+
+
+
+
+			<!--Grid column-->
+			<div class="wrap-login100 center" ng-controller="myLogin" ng-submit="submit()">
+
+				<!-- Default form login -->
+				<form class="text-center border border-light p-5" name="loginUs">
+
+					<p class="h4 mb-4">Sign in</p>
+
+					<!-- Username -->
+					<input type="Username" id="defaultLoginFormUsernam" name="username" ng-model="regObj.username" class="form-control"
+						placeholder="Username" required>
+						<span ng-show="loginUs.username.$invalid" class="spa">Username required.</span>
+						<div class=" mb-4"></div>
+
+					<!-- Password -->
+					<input type="password" id="defaultLoginFormPassword" name="password" ng-model="regObj.password" class="form-control"
+						placeholder="Password" required>
+						<span ng-show="loginUs.password.$invalid" class="spa ">Password required.</span>
+						<div class=" mb-4"></div>
+
+					<div class="d-flex justify-content-around">
+						<div>
+							<!-- Remember me -->
+							<mdb-checkbox [default]="true">Remember me</mdb-checkbox>
+						</div>
+						<div>
+							<!-- Forgot password -->
+							<a href="">Forgot password?</a>
+						</div>
+					</div>
+
+					<!-- Sign in button -->
+					<button type="submit" class="btn btn-info">Sign in</button>
+
+					<!-- Register -->
+					<p>Not a member?
+						<a href="">Register</a>
+					</p>
+
+					<!-- Social login -->
+					<p>or sign in with:</p>
+
+					<a type="button" class="light-blue-text mx-2">
+						<i class="fab fa-facebook-messenger fa-lg"></i>
+					</a>
+					<a type="button" class="light-blue-text mx-2">
+						<i class="	fab fa-instagram fa-lg"></i>
+					</a>
+					<a type="button" class="light-blue-text mx-2">
+						<i class="fab fa-linkedin fa-lg"></i>
+					</a>
+					<a type="button" class="light-blue-text mx-2">
+						<i class="fab fa-github fa-lg"></i>
+					</a>
+
+				</form>
+				<!-- Default form login -->
+
+			</div>
+			<!--Grid column-->
+
+
+
+
+
+
+		</div>
+	</main>
+	<!--Main layout-->
+
+
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<!-- Initializations -->
+	<script type="text/javascript">
+		// Animations initialization
+		new WOW().init();
+
+	</script>
+
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myLogin', function ($scope) {
+			$scope.submit = function () {
+				angular.forEach($scope.mydata, function (item) {
+
+					if ((item.username == $scope.regObj.username) && (item.password == $scope.regObj.password)) {
+						// alert("Success")
+						regObj.name = item.name;
+						regObj.username = loginUs.username.value;
+						regObj.password = loginUs.password.value;
+						localStorage.setItem("User", JSON.stringify(regObj));
+						window.location.href = "home-page.html"; 
+					}
+					else {
+						alert("Invalid username or password");
+						$scope.regObj.username = "";
+						$scope.regObj.password = "";
+					}
+				});
+			};
+
+			var regObj = {};
+			$scope.mydata = [
+				{
+					name: "thai",
+					username: "admin",
+					password: "123"
+				},
+			];
+		});
+	</script>
+</body>
+
+</html>

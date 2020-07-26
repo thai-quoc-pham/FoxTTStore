@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>FoxxTTStore</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="js/datastore.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .carousel {
+      height: 60vh;
+    }
+
+    @media (max-width: 740px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    @media (min-width: 800px) and (max-width: 850px) {
+
+      html,
+      body,
+      header,
+      .carousel {
+        height: 100vh;
+      }
+    }
+
+    .spa {
+      color: red;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="productCtrl">
+
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+    <div class="container">
+
+      <!-- Brand -->
+      <a class="navbar-brand waves-effect" target="_blank">
+        <strong class="blue-text">FoxxTT</strong>
+      </a>
+
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link waves-effect" href="home-page.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" href="" target="_blank">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" target="_blank">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-effect" target="_blank">About</a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+
+          <li class="nav-item">
+            <a href="https://www.facebook.com/PQThai.pqt" class="nav-link waves-effect" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.instagram.com/thaaipq/" class="nav-link waves-effect" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+          <!-- <li class="nav-item" style="animation-name: fadeIn;">
+            <a class="nav-link border border-light rounded waves-effect" data-toggle="modal" data-target="#myModal">
+              <span class="badge red z-depth-1 mr-1">{{totalItem}}</span>
+              <i class="fas fa-shopping-cart"></i>
+              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            </a>
+          </li> -->
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+
+
+  </div>
+
+
+
+  <!--Main layout-->
+  <main class="mt-5 pt-4">
+    <div class="container wow fadeIn">
+
+      <!-- Heading -->
+      <h2 class="my-5 h2 text-center blue-text">Checkout</h2>
+
+      <!--Grid row-->
+      <div class="row">
+
+        <!--Grid column-->
+        <div class="col-md-8 mb-4">
+
+          <!--Card-->
+          <div class="card">
+
+            <!--Card content-->
+            <form name="myForm">
+              <div class="card-body">
+                <!--First Name-->
+                <div class="md-form mb-5">
+                  <input name="myName" ng-model="myName" class="form-control" required placeholder="First name">
+                  <span ng-show="myForm.myName.$invalid" class="spa">First name required.</span>
+                </div>
+                <!--Last Name-->
+                <div class="md-form mb-5">
+                  <input name="myLastName" ng-model="myLastName" class="form-control" required placeholder="Last name">
+                  <span ng-show="myForm.myLastName.$invalid" class="spa">Last name required.</span>
+                </div>
+                <!--Email-->
+                <div class="md-form mb-5">
+                  <input name="myEmail" ng-model="myEmail" class="form-control" required placeholder="Email">
+                  <span ng-show="myForm.myEmail.$invalid" class="spa">Email required.</span>
+                </div>
+                <!--Address-->
+                <div class="md-form mb-5">
+                  <input name="myAddress" ng-model="myAddress" class="form-control" required placeholder="Address">
+                  <span ng-show="myForm.myAddress.$invalid" class="spa">Address required.</span>
+                </div>
+
+                <div class="row">
+                  <!--Country-->
+                  <div class="col-md-6 mb-2">
+                    <input name="myCountry" ng-model="myCountry" class="form-control" required placeholder="Country">
+                    <span ng-show="myForm.myCountry.$invalid" class="spa">Country required.</span>
+                  </div>
+                  <!--Zip-->
+                  <div class="col-md-6 mb-2">
+                    <input name="myZip" ng-model="myZip" class="form-control" required placeholder="Zip code">
+                    <span ng-show="myForm.myZip.$invalid" class="spa">Zip code required.</span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="same-address">
+                  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing
+                    address</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="save-info">
+                  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                </div>
+
+                <hr>
+
+                <div class="d-block my-3">
+                  <div class="custom-control custom-radio">
+                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                    <label class="custom-control-label" for="credit">Credit card</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <label class="custom-control-label" for="debit">Debit card</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                    <label class="custom-control-label" for="paypal">Paypal</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <!--Name on card-->
+                  <div class="col-md-6 mb-2">
+                    <input name="myNOC" ng-model="myNOC" class="form-control" required placeholder="Name on card">
+                    <span ng-show="myForm.myNOC.$invalid" class="spa">Name on card required.</span>
+                  </div>
+                  <!--Card number-->
+                  <div class="col-md-6 mb-2">
+                    <input name="myCN" ng-model="myCN" class="form-control" required placeholder="Card number">
+                    <span ng-show="myForm.myCN.$invalid" class="spa">Card number required.</span>
+                  </div>
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+              </div>
+            </form>
+            <hr class="mb-4">
+            <button class="btn btn-secondary btn-lg "> Back to buy</button>
+
+          </div>
+          <!--/.Card-->
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-4 mb-4">
+
+          <!-- Heading -->
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">9</span>
+
+          </h4>
+
+          <!-- Cart -->
+          <ul class="list-group mb-3 z-depth-1">
+            <li class="list-group-item d-flex justify-content-between lh-condensed" ng-repeat="cart in carts">
+              <div>
+
+                <small class="text-muted">{{cart.nameprod}}</small>
+              </div>
+              <span class="text-muted">{{cart.price | currency}}</span>
+            </li>
+
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total </span>
+              <strong>$746.00</strong>
+            </li>
+          </ul>
+          <!-- Cart -->
+
+          <!-- Promo code -->
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Promo code" aria-label="Recipient's username"
+                aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-secondary btn-md waves-effect m-0" type="button">Redeem</button>
+              </div>
+            </div>
+          </form>
+          <!-- Promo code -->
+
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row" style="padding-top: 20px">
+
+        <!-- Grid column -->
+        <div class="col-md-8 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">About Us</h5>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+            repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+            harum esse fugiat. Itaque, culpa?</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-4 mb-md-0 mb-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Contact</h5>
+          <p>
+            <i class="fas fa-home mr-3"></i> 969 Lê Văn Khương, Q12, HCM</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> thaipqps08620@fpt.edu.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> 0933 019 076</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> 0825 826 962</p>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Text -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="https://www.facebook.com/PQThai.pqt" target="_blank"> FoxxTT</a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
