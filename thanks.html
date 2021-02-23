@@ -1,0 +1,202 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>FoxxTTStore</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="js/datastore.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <style type="text/css">
+        html,
+        body,
+        header,
+        .carousel {
+        height: 60vh;
+        }
+
+        @media (max-width: 740px) {
+
+        html,
+        body,
+        header,
+        .carousel {
+            height: 100vh;
+        }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+
+        html,
+        body,
+        header,
+        .carousel {
+            height: 100vh;
+        }
+        }
+
+        .spa {
+        color: red;
+        }
+    </style>
+    </head>
+
+    <body ng-app="myApp" ng-controller="productCtrl">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" target="_blank">
+            <strong class="blue-text">FoxxTT</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <!-- Left -->
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link waves-effect" href="index.html">Home
+                <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect" href="" target="_blank">Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect" target="_blank">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-effect" target="_blank">About</a>
+            </li>
+            </ul>
+
+            <!-- Right -->
+            <ul class="navbar-nav nav-flex-icons">
+
+            <li class="nav-item">
+                <a href="https://www.facebook.com/PQThai.pqt" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="https://www.instagram.com/thaaipq/" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+
+            </ul>
+
+        </div>
+
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+
+
+    </div>
+
+
+
+    <!--Main layout-->
+    <main class="mt-5 pt-4" style="min-height: 400px;">
+        <div class="container wow fadeIn">
+            <h2 class="my-5 h2 text-center blue-text">Thank you for shopping at FoxxTT</h2>
+            <button class="btn btn-secondary btn-lg " ng-click="back()"> Home Page</button>
+        </div>
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <!-- Footer Text -->
+        <div class="container-fluid text-center text-md-left">
+
+        <!-- Grid row -->
+        <div class="row" style="padding-top: 20px">
+
+            <!-- Grid column -->
+            <div class="col-md-8 mt-md-0 mt-3">
+
+            <!-- Content -->
+            <h5 class="text-uppercase font-weight-bold">About Us</h5>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+                repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+                harum esse fugiat. Itaque, culpa?</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-4 mb-md-0 mb-3">
+
+            <!-- Content -->
+            <h5 class="text-uppercase font-weight-bold">Contact</h5>
+            <p>
+                <i class="fas fa-home mr-3"></i> 969 Lê Văn Khương, Q12, HCM</p>
+            <p>
+                <i class="fas fa-envelope mr-3"></i> thaipqps08620@fpt.edu.com</p>
+            <p>
+                <i class="fas fa-phone mr-3"></i> 0933 019 076</p>
+            <p>
+                <i class="fas fa-phone mr-3"></i> 0825 826 962</p>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+        </div>
+        <!-- Footer Text -->
+
+        <!--Copyright-->
+        <div class="footer-copyright py-3">
+        © 2019 Copyright:
+        <a href="https://www.facebook.com/PQThai.pqt" target="_blank"> FoxxTT</a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+    <!--/.Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Initializations -->
+    <script type="text/javascript">
+        // Animations initialization
+        new WOW().init();
+
+    </script>
+    </body>
+
+    </html>

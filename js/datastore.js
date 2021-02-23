@@ -280,108 +280,8 @@ myApp.controller("productCtrl", function ($scope) {
 
 
     ]
-    $scope.carts = [
-        {
-            id: 5,
-            nameprod: "Kakashi Minko Backpack M Black",
-            price: 79,
-            img: "5.jpg",
-            note: "Kakashi Minko Backpack là mẫu balo chống nước có thiết kế năng động, hiện đại đến từ thương hiệu balo, túi xách cao cấp Kakashi. Với sự tỉ mỉ trong từng chi tiết, Kakashi đã tạo nên một sản phẩm vừa tiện lợi lại thời trang",
-            type: "thuong",
-            material: "Polyester",
-            size: "40 x 30 x 12cm",
-            qty: 1
-        },
-        {
-            id: 6,
-            nameprod: "Tricsport Sandstorm Backpack M Sandstone",
-            price: 169,
-            img: "6.jpg",
-            note: "Tricsport Sandstorm Backpack là một dòng balo mới xuất hiện, mang đậm phong cách mạnh mẽ và cá tính. Balo còn được tích hợp hàng ngàn tiện ích mà khi gặp bạn sẽ đổ gục từ lần đầu tiên. Balo cực tiện lợi phù hợp cho những chuyến đi xa hoặc du lịch.",
-            type: "dulich",
-            material: "Cordura",
-            size: "44 x 27 x 18cm",
-            qty: 1
-        },
-        {
-            id: 7,
-            nameprod: "Tricsport Transporter Backpack M D.Grey",
-            price: 119,
-            img: "7.jpg",
-            note: "Tricsport Transporter Backpack là mẫu balo du lịch có kiểu dáng gọn gàng, trẻ trung đến từ thương hiệu balo, túi xách nổi tiếng. Với sự chú trọng về tiện ích cho người dùng, hãng đã tạo nên một sản phẩm balo đa năng có thiết kế nhiều ngăn tiện lợi rất độc đáo cùng vẻ ngoài tối giản, thanh lịch có thể đồng hành cùng bạn trong mọi chuyến đi. ",
-            type: "dulich",
-            material: "NYLON 550D",
-            size: "35 x 21 x 50 cm",
-            qty: 1
-        },
-        {
-            id: 8,
-            nameprod: "Seliux F3 Demon Backpack M Navy",
-            price: 99,
-            img: "8.jpg",
-            note: "Seliux F3 Demon Backpack là balo thương hiệu độc quyền Seliux. Các sản phẩm balo, túi xách, phụ kiện của Seliux đều được làm từ chất liệu cao cấp được kiểm định nghiêm ngặt.",
-            type: "dulich",
-            material: "Chicken Tex",
-            size: "53 x 31.5 x 18cm",
-            qty: 1
-        },
-        {
-            id: 9,
-            nameprod: "Seliux F6 Skyray Backpack M Grey",
-            price: 119,
-            img: "9.jpg",
-            note: "Seliux F6 Skyray Backpack được chú trọng đầu tư về chất liệu, đem đến cho mọi người sản phẩm balo hoàn hảo về chức năng và sử dụng linh hoạt trong nhiều điều kiện thời tiết khác nhau.",
-            type: "thuong",
-            material: "Chicken Tex, 420D RipStop",
-            size: "43 x 30 x 12 cm",
-            qty: 1
-        },
-        {
-            id: 17,
-            nameprod: "Kakashi Taiko 2 S Navy",
-            price: 24,
-            img: "17.jpg",
-            note: "Kakashi Taiko Bag S có dạng túi trống nhưng kích thước rất nhỏ gọn, làm từ chất liệu Polyester và nylon giúp hạn chế thấm nước tốt. Quai túi khá dài dễ dàng đeo chéo vai, phù hợp trong cách hoạt động thể thao, dạo phố, vui chơi,...",
-            type: "dulich",
-            material: "Polyester",
-            size: "22 x 11 x 11 cm",
-            qty: 1
-        },
-        {
-            id: 18,
-            nameprod: "Tricsport Sandstorm Messenger M Black",
-            price: 99,
-            img: "18.jpg",
-            note: "Tricsport Sandstorm Messenger M Black là một dòng túi đeo chéo/túi đeo 1 bên mới xuất hiện, mang đậm phong cách mạnh mẽ và cá tính. Balo còn được tích hợp hàng ngàn tiện ích mà khi gặp bạn sẽ đổ gục từ lần đầu tiên.",
-            type: "deocheo",
-            material: "Cordura",
-            size: "46 x 30 x 12cm",
-            qty: 1
-        },
-        {
-            id: 19,
-            nameprod: "Kakashi Ine Sling S Gray",
-            price: 19,
-            img: "19.jpg",
-            note: "Kakashi Ine Sling S Gray là mẫu túi xách thời trang có thiết kế nhỏ gọn, tiện lợi đến từ thương hiệu balo, túi xách mang đậm phong cách Nhật Bản. Với sự tỉ mỉ trong từng chi tiết, Kakashi đã tạo nên một sản phẩm vừa tiện lợi lại vừa thời trang",
-            type: "deocheo",
-            material: "Polyester, Nylon",
-            size: "17 x 9 x 12 cm",
-            qty: 1
-        },
-        {
-            id: 20,
-            nameprod: "Seliux M10 Hercules Bag S Red",
-            price: 27,
-            img: "20.jpg",
-            note: "Seliux M10 Hercules Bag S Red là dòng sản phẩm túi đeo chéo cao cấp, thời trang của thương hiệu Seliux. Túi xách Seliux vượt trội về chất lượng lẫn kiểu dáng, mẫu mã.",
-            type: "deocheo",
-            material: "Checken Tex SupremeTM",
-            size: "27 x 24 x 7 cm",
-            qty: 1
-        },
-    ]
-
+    $scope.carts = JSON.parse(sessionStorage.getItem("buy")); 
+    $scope.totalToBuy = sessionStorage.getItem("total")
     var obj = {};
     $scope.cart = [];
     $scope.total = 0;
@@ -404,8 +304,10 @@ myApp.controller("productCtrl", function ($scope) {
         $scope.cart.splice(index, 1);
     };
     $scope.saveCart =function(){
-        localStorage.getItem("product",JSON.stringify($scope.cart));
+        sessionStorage.setItem("buy",JSON.stringify($scope.cart));
+        sessionStorage.setItem("total",$scope.total);
         window.location.href = "checkout.html";
+
     };
     $scope.btnTang = function (cart) {
         $scope.cart[$scope.cart.indexOf(cart)].soluong++;
@@ -438,5 +340,13 @@ myApp.controller("productCtrl", function ($scope) {
 
     };
 
+    $scope.back = function () {
+        window.location.href = "index.html"
+    }
+
+    $scope.done = function () {
+        sessionStorage.clear();
+        location.href="thanks.html"
+    }
 });
 

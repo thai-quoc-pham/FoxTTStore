@@ -74,7 +74,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="home-page.html">Home
+            <a class="nav-link waves-effect" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -134,13 +134,13 @@
       <div class="row">
 
         <!--Grid column-->
-        <div class="col-md-8 mb-4">
+        <div class="col-md-7 mb-4">
 
           <!--Card-->
           <div class="card">
 
             <!--Card content-->
-            <form name="myForm">
+            <form name="myForm" ng-submit="done()">
               <div class="card-body">
                 <!--First Name-->
                 <div class="md-form mb-5">
@@ -224,7 +224,7 @@
               </div>
             </form>
             <hr class="mb-4">
-            <button class="btn btn-secondary btn-lg "> Back to buy</button>
+            <button class="btn btn-secondary btn-lg " ng-click="back()"> Back to buy</button>
 
           </div>
           <!--/.Card-->
@@ -233,28 +233,30 @@
         <!--Grid column-->
 
         <!--Grid column-->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-5 mb-4">
 
           <!-- Heading -->
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Your cart</span>
-            <span class="badge badge-secondary badge-pill">9</span>
+            
 
           </h4>
 
           <!-- Cart -->
           <ul class="list-group mb-3 z-depth-1">
             <li class="list-group-item d-flex justify-content-between lh-condensed" ng-repeat="cart in carts">
-              <div>
-
-                <small class="text-muted">{{cart.nameprod}}</small>
-              </div>
-              <span class="text-muted">{{cart.price | currency}}</span>
+           
+                
+                <small class="text-muted">{{cart.nameprod}} x{{cart.soluong}}</small>
+             
+                <!-- <span class="badge badge-secondary badge-pill d-flex justify-content-between align-items-center">{{cart.soluong}}</span> -->
+                <span class="text-muted">{{cart.price*cart.soluong | currency}}</span>
+             
             </li>
 
             <li class="list-group-item d-flex justify-content-between">
               <span>Total </span>
-              <strong>$746.00</strong>
+              <strong>{{totalToBuy | currency}}</strong>
             </li>
           </ul>
           <!-- Cart -->
